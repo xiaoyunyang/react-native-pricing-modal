@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import Button from "./Button"
-import { TierAbout } from './TierAbout';
 import { TierCarousel } from './TierCarousel';
 import { TIERS } from '../constants/tiers';
 

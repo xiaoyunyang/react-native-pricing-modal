@@ -1,12 +1,13 @@
 import { Dimensions, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { DEFAULT_TIERS, TIERS, TIER_INFO } from '../constants/tiers';
+import { TIERS } from '../constants/tiers';
 
 import { TierAbout } from './TierAbout';
 
 const { width } = Dimensions.get('window');
 
-// Want https://github.com/dohooo/react-native-reanimated-carousel/blob/HEAD/exampleExpo/src/pages/parallax/index.tsx
-export const TierCarousel = ({ tiers = DEFAULT_TIERS }) => {
+// Carousel implementation idea
+// https://blog.logicwind.com/carousel-using-react-native-scrollview/
+export const TierCarousel = ({ tiers = TIERS }) => {
   return (
     <View style={styles.container}>
       <ScrollView
@@ -15,12 +16,12 @@ export const TierCarousel = ({ tiers = DEFAULT_TIERS }) => {
         showsHorizontalScrollIndicator
         style={{ width: width }}
       >
-        {/* {tiers.map(tier => {
-          return <TierAbout tier={tier} />
-        })} */}
-          <View style={{ backgroundColor: "blue", flex: 1, width: width }}></View>
+        {tiers.map((tier) => {
+          return <TierAbout key={tier.id} {...tier} />
+        })}
+          {/* <View style={{ backgroundColor: "blue", flex: 1, width: width }}></View>
           <View style={{ backgroundColor: "yellow", flex: 1, width: width }}></View>
-        <View style={{ backgroundColor: "green", flex: 2, width: width }}></View>
+        <View style={{ backgroundColor: "green", flex: 1, width: width }}></View> */}
       </ScrollView>
     </View>
   )
