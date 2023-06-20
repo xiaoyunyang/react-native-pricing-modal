@@ -1,4 +1,5 @@
 import { StyleSheet, View, Pressable, Text } from 'react-native';
+import { BLACK, GREEN_BACKGROUND } from '../constants/theme';
 
 export default function Button({ label }) {
   return (
@@ -13,8 +14,10 @@ export default function Button({ label }) {
 const styles = StyleSheet.create({
   buttonContainer: {
     width: 320,
-    height: 68,
-    backgroundColor: 'green',
+    height: 47,
+    backgroundColor: GREEN_BACKGROUND,
+
+    fontWeight: 'bold',
     marginHorizontal: 20,
     alignItems: 'center',
     justifyContent: 'center',
@@ -23,7 +26,7 @@ const styles = StyleSheet.create({
   button: {
     borderRadius: 10,
     width: '100%',
-    height: '100%',
+
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
@@ -32,7 +35,7 @@ const styles = StyleSheet.create({
     paddingRight: 8,
   },
   buttonLabel: {
-    color: 'white',
+    color: BLACK,
     fontSize: 16,
   },
 });

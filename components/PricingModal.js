@@ -9,8 +9,10 @@ const SUB_TITLE = "Upgrade to get the most out of Parthean"
 export const PricingModal = ({ tiers = TIERS}) => {
   return (
     <View style={styles.container}>
-      <Text>{TITLE}</Text>
-      <Text>{SUB_TITLE}</Text>
+      <View>
+        <Text>{TITLE}</Text>
+        <Text>{SUB_TITLE}</Text>
+      </View>
       <TierCarousel tiers={tiers} />
       <View style={styles.footerContainer}>
         <Button label="Continue" />
@@ -22,12 +24,14 @@ export const PricingModal = ({ tiers = TIERS}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: "column",
     backgroundColor: 'red',
     alignItems: 'center',
     justifyContent: 'center',
   },
   footerContainer: {
-    flex: 1 / 3,
+    paddingTop: 20,
+    paddingBottom: 20,
     alignItems: 'center',
   },
 });
