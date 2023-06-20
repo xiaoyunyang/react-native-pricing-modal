@@ -1,12 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { PricingModal } from './components/PricingModal';
 
 export default function App() {
   console.log("y")
   return (
     <View style={styles.container}>
-      <Text>Hello Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <PricingModal />
     </View>
   );
 }
@@ -14,7 +14,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#25292e',
     alignItems: 'center',
     justifyContent: 'center',
   },
