@@ -3,7 +3,6 @@ import { StyleSheet, View } from 'react-native';
 import { PricingModal } from './components/PricingModal';
 
 export default function App() {
-  console.log("y")
   return (
     <View style={styles.container}>
       <PricingModal />

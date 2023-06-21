@@ -7,9 +7,14 @@ const BENEFIT = {
 }
 
 // We can derive the annualPrice from the monthly price in code when we create this object
-export const TIERS = [
+export const TIER_GROUP_1 = [
   { id: "MONTHLY_PRO", name: "Parthean Pro", monthlyPrice: "$9.99/month", benefits: [BENEFIT.UNLIMITED_ACCOUNTS, BENEFIT.PROACTIVE_TIPS, BENEFIT.NEW_AI_TOOLS] },
   { id: "ANNUAL_PRO",  name: "Parthean Pro", monthlyPrice: "$5.83/month", annualPrice: "$69.99/year", benefits: [BENEFIT.UNLIMITED_ACCOUNTS, BENEFIT.PROACTIVE_TIPS, BENEFIT.NEW_AI_TOOLS]},
+]
+
+export const TIER_GROUP_2 = [
   { id: "MONTHLY_PRO_COACHING",  name: "Parthean Pro + Coaching", monthlyPrice: "$79.99/month", benefits: [BENEFIT.HUMAN_COACHING, BENEFIT.ALL_PRO_FEATURES]},
   { id: "ANNUAL_PRO_COACHING",  name: "Parthean Pro + Coaching", monthlyPrice: "66.67/month", annualPrice: "$879.99/year", benefits: [BENEFIT.HUMAN_COACHING, BENEFIT.ALL_PRO_FEATURES]},
 ]
+
+export const TIER_GROUPS = [TIER_GROUP_1, TIER_GROUP_2]
