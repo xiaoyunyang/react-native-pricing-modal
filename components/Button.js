@@ -1,5 +1,5 @@
-import { StyleSheet, View, Pressable, Text } from 'react-native';
-import { TEXT_TERTIARY, BLACK } from './shared/theme';
+import { StyleSheet, View, Pressable, Text, Dimensions } from 'react-native';
+import { TEXT_TERTIARY, BLACK, PADDING } from './shared/theme';
 
 export default function Button({ label }) {
   return (
@@ -13,10 +13,9 @@ export default function Button({ label }) {
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    width: 320,
+    width: Dimensions.get('window').width - PADDING * 4,
     height: 47,
     backgroundColor: TEXT_TERTIARY,
-
     fontWeight: 'bold',
     marginHorizontal: 20,
     alignItems: 'center',
@@ -24,7 +23,7 @@ const styles = StyleSheet.create({
     padding: 3,
   },
   button: {
-    borderRadius: 10,
+    borderRadius : 10,
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
