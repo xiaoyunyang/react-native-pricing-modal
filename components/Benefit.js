@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native';
+import { PADDING, SECONDARY, TEXT_PRIMARY, TEXT_SECONDARY } from './shared/theme';
 
 const BoldAndBeautiful = () => {
   return (
@@ -19,15 +20,15 @@ export const Benefit = ({ icon, name, description }) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'green',
+    backgroundColor: SECONDARY,
     flex: 1,
-    padding: 20
+    padding: PADDING
   },
   name: {
     fontWeight: 'bold',
-    color: "#FFFFFF",
+    color: TEXT_PRIMARY,
   },
   description: {
-    color: 'white'
+    color: TEXT_SECONDARY
   }
 })

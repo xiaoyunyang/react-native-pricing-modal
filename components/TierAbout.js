@@ -1,7 +1,7 @@
 import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import { Benefit } from './Benefit';
-import { ACCENT_WHITE, GREEN, WHITE } from '../constants/theme';
-
+import { TEXT_TERTIARY, PADDING, SECONDARY, TEXT_PRIMARY, TEXT_SECONDARY } from './shared/theme';
+import { Row } from './shared/Row';
 const { width } = Dimensions.get('window');
 
 export const TierAbout = ({
@@ -13,14 +13,14 @@ export const TierAbout = ({
     <View style={styles.container}>
       <View style={styles.details}>
         <Text style={styles.tierName}>{name}</Text>
-        <View style={designSystemStyles.row}>
+        <Row>
             <View>
               <Text style={styles.monthly}>{monthlyPrice}</Text>
           </View>
           <View style={{ paddingLeft: 5 }}>
             {annualPrice && <Text style={styles.annual}>({annualPrice})</Text>}
-            </View>
-        </View>
+          </View>
+        </Row>
         <View>
           {
             benefits.map((benefit) => <Benefit key={benefit.name} {...benefit} />)
@@ -31,37 +31,24 @@ export const TierAbout = ({
   )
 }
 
-const designSystemStyles = StyleSheet.create({
-   row: {
-    flex: 1,
-    flexDirection: 'row',
-    marginBottom: 10
-  },
-})
-
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#030303",
-    width: width,
     flex: 1,
+    backgroundColor: SECONDARY,
+    padding: PADDING
   },
   pricing: {
-    paddingBottom: 20,
     flex:1,
     flexDirection: 'row',
   },
   monthly: {
-    color: WHITE,
+    color: TEXT_PRIMARY,
   },
   annual: {
-    color: ACCENT_WHITE,
-  },
-  details: {
-    backgroundColor: "#1D1D1D",
-    padding: 20
+    color: TEXT_SECONDARY,
   },
   tierName: {
-    color: GREEN,
+    color: TEXT_TERTIARY,
     fontWeight: 'bold',
   }
 })
