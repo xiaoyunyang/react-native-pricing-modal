@@ -11,7 +11,7 @@ export const TERTIARY = "#3D4043"
 
 // green
 export const TEXT_PRIMARY = "#FFFFFF"
-export const TEXT_SECONDARY = "rgba(255, 255, 255, 0.75)"
+export const TEXT_SECONDARY = "#989898"
 export const TEXT_TERTIARY = "#1FCB64"
 
 // Padding

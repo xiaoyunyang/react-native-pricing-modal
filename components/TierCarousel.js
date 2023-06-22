@@ -1,7 +1,7 @@
-import { Dimensions, ScrollView, StyleSheet, View } from 'react-native';
+import { Dimensions, StyleSheet, View } from 'react-native';
 import { TIER_GROUPS } from '../constants/tiers';
 import { TierGroup } from './TierGroup';
-import { PageIndicator } from './shared/Carousel';
+import { Carousel } from './shared/Carousel';
 import { useState } from 'react';
 import { PADDING } from './shared/theme';
 
@@ -21,17 +21,10 @@ export const TierCarousel = ({ tierGroups = TIER_GROUPS }) => {
   }
   return (
     <View style={styles.container}>
-      <ScrollView
-        horizontal
-        pagingEnabled
-        showsHorizontalScrollIndicator={false}
-        style={{ width: width }}
-        onScroll={handlePageChange}
-        // This controls how often the scroll event will be fired while scrolling (as a time interval in ms)
-        // If you do not need precise scroll position tracking, set this value higher to limit the information
-        // being sent across the bridge.
-        // The default value is 0, which results in the scroll event being sent only once each time the view is scrolled.
-        scrollEventThrottle={16}
+      <Carousel
+        handlePageChange={handlePageChange}
+        totalPages={tierGroups.length}
+        currPage={currPage}
       >
         {
           tierGroups.map((tierGroup, i) => (
@@ -40,8 +33,7 @@ export const TierCarousel = ({ tierGroups = TIER_GROUPS }) => {
             </View>
           ))
         }
-      </ScrollView>
-      <PageIndicator totalPages={tierGroups.length} currPage={currPage} />
+      </Carousel>
     </View>
   )
 }

@@ -1,11 +1,15 @@
 import {
   StyleSheet,
   View,
+  ScrollView,
+  Dimensions
 } from "react-native";
-import { BASE_UNIT } from "./theme";
+import { BASE_UNIT, SECONDARY, TEXT_SECONDARY } from "./theme";
+
+const { width } = Dimensions.get('window');
 
 // https://www.codedaily.io/tutorials/Build-an-Animated-Page-Indicator-using-Animated-Dynamic-Value-Tracking-in-React-Native
-export const PageIndicator = ({ totalPages, currPage }) => {
+const PageIndicator = ({ totalPages, currPage }) => {
   return (
     <View style={styles.container}>
       <View style={styles.background}>
@@ -21,6 +25,31 @@ export const PageIndicator = ({ totalPages, currPage }) => {
   )
 }
 
+
+export const Carousel = ({ children, handlePageChange, totalPages, currPage }) => {
+
+  return (
+    <>
+      <ScrollView
+        horizontal
+        pagingEnabled
+        showsHorizontalScrollIndicator={false}
+        style={{ width: width }}
+        onScroll={handlePageChange}
+        // This controls how often the scroll event will be fired while scrolling (as a time interval in ms)
+        // If you do not need precise scroll position tracking, set this value higher to limit the information
+        // being sent across the bridge.
+        // The default value is 0, which results in the scroll event being sent only once each time the view is scrolled.
+        scrollEventThrottle={16}
+      >
+        {children}
+      </ScrollView>
+      <PageIndicator totalPages={totalPages} currPage={currPage} />
+    </>
+  )
+}
+
+const CIRCLE_WIDTH = 10
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -31,9 +60,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   circle: {
-    width: BASE_UNIT * 4,
-    height: BASE_UNIT * 4,
-    backgroundColor: "#ddd",
+    width: CIRCLE_WIDTH,
+    height: CIRCLE_WIDTH,
+    backgroundColor: SECONDARY,
     borderRadius: 20,
     marginRight: 4,
     overflow: "hidden",
@@ -42,9 +71,9 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 0,
     left: 0,
-    width: BASE_UNIT * 4,
-    height: 40,
+    width: CIRCLE_WIDTH,
+    height: CIRCLE_WIDTH,
     borderRadius: 20,
-    backgroundColor: "tomato",
+    backgroundColor: TEXT_SECONDARY,
   },
 });
