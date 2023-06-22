@@ -3,7 +3,7 @@ import { TIER_GROUPS } from '../constants/tiers';
 import { TierGroup } from './TierGroup';
 import { Carousel } from './shared/Carousel';
 import { useState } from 'react';
-import { PADDING } from './shared/theme';
+import { PADDING, PRIMARY } from './shared/theme';
 
 
 const { width } = Dimensions.get('window');
@@ -39,11 +39,10 @@ export const TierCarousel = ({ tierGroups = TIER_GROUPS }) => {
 }
 
 
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: PRIMARY,
   },
   carouselItem: {
     width: width,

@@ -1,7 +1,7 @@
 import { View, Switch, StyleSheet } from 'react-native';
 import { TierAbout } from './TierAbout';
 import { useState } from 'react';
-import { PRIMARY } from './shared/theme';
+import { PADDING, PRIMARY } from './shared/theme';
 
 export const TierGroup = ({ tiers }) => {
   const [tierIdx, setTierIdx] = useState(0)
@@ -26,5 +26,6 @@ const styles = StyleSheet.create({
     container: {
     flex: 1,
     backgroundColor: PRIMARY,
+    padding: PADDING,
   },
 })
