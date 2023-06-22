@@ -1,10 +1,8 @@
 import {
   StyleSheet,
-  Text,
-  Animated,
   View,
-  TouchableOpacity,
 } from "react-native";
+import { BASE_UNIT } from "./theme";
 
 // https://www.codedaily.io/tutorials/Build-an-Animated-Page-Indicator-using-Animated-Dynamic-Value-Tracking-in-React-Native
 export const PageIndicator = ({ totalPages, currPage }) => {
@@ -22,6 +20,7 @@ export const PageIndicator = ({ totalPages, currPage }) => {
     </View>
   )
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -32,8 +31,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   circle: {
-    width: 40,
-    height: 40,
+    width: BASE_UNIT * 4,
+    height: BASE_UNIT * 4,
     backgroundColor: "#ddd",
     borderRadius: 20,
     marginRight: 4,
@@ -43,7 +42,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 0,
     left: 0,
-    width: 40,
+    width: BASE_UNIT * 4,
     height: 40,
     borderRadius: 20,
     backgroundColor: "tomato",

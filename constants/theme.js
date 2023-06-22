@@ -1,5 +1,0 @@
-export const GREEN = "#00FF00"
-export const WHITE = "#FFFFFF"
-export const ACCENT_WHITE = "rgba(255, 255, 255, 0.75)"
-export const GREEN_BACKGROUND = "#1FCB64"
-export const BLACK = "#000000"

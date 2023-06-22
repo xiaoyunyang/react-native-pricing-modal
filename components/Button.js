@@ -1,5 +1,5 @@
 import { StyleSheet, View, Pressable, Text } from 'react-native';
-import { BLACK, GREEN_BACKGROUND } from '../constants/theme';
+import { TEXT_TERTIARY, BLACK } from './shared/theme';
 
 export default function Button({ label }) {
   return (
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     width: 320,
     height: 47,
-    backgroundColor: GREEN_BACKGROUND,
+    backgroundColor: TEXT_TERTIARY,
 
     fontWeight: 'bold',
     marginHorizontal: 20,
@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
   button: {
     borderRadius: 10,
     width: '100%',
-
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',

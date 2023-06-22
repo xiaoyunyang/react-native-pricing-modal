@@ -3,6 +3,7 @@ import { TIER_GROUPS } from '../constants/tiers';
 import { TierGroup } from './TierGroup';
 import { PageIndicator } from './shared/Carousel';
 import { useState } from 'react';
+import { PADDING } from './shared/theme';
 
 
 const { width } = Dimensions.get('window');
@@ -33,7 +34,11 @@ export const TierCarousel = ({ tierGroups = TIER_GROUPS }) => {
         scrollEventThrottle={16}
       >
         {
-          tierGroups.map((tierGroup, i) => <TierGroup key={i}  tiers={tierGroup} />)
+          tierGroups.map((tierGroup, i) => (
+            <View style={styles.carouselItem}>
+              <TierGroup key={i}  tiers={tierGroup} />
+            </View>
+          ))
         }
       </ScrollView>
       <PageIndicator totalPages={tierGroups.length} currPage={currPage} />
@@ -47,5 +52,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
+  },
+  carouselItem: {
+    width: width,
+    padding: PADDING,
   }
 })
