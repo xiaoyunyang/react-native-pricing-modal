@@ -2,13 +2,11 @@ import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import { Benefit } from './Benefit';
 import { TEXT_TERTIARY, PADDING, SECONDARY, TEXT_PRIMARY, TEXT_SECONDARY } from './shared/theme';
 import { Row } from './shared/Row';
-const { width } = Dimensions.get('window');
 
 export const TierAbout = ({
   name, monthlyPrice, annualPrice, benefits,
   icon
 }) => {
-
   return (
     <View style={styles.container}>
       <View style={styles.details}>
