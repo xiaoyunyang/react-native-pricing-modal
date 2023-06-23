@@ -13,11 +13,10 @@ export const Benefit = ({ icon, name, description }) => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: SECONDARY,
-    flex: 1,
     padding: PADDING
   },
   name: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     color: TEXT_PRIMARY,
   },
   description: {

@@ -4,7 +4,7 @@ import {
   ScrollView,
   Dimensions
 } from "react-native";
-import { BASE_UNIT, SECONDARY, TEXT_SECONDARY } from "./theme";
+import { SECONDARY, TEXT_SECONDARY } from "./theme";
 
 const { width } = Dimensions.get('window');
 
@@ -52,7 +52,6 @@ export const Carousel = ({ children, handlePageChange, totalPages, currPage }) =
 const CIRCLE_WIDTH = 10
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     alignItems: "center",
     justifyContent: "center",
   },

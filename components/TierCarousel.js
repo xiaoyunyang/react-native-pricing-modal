@@ -5,7 +5,6 @@ import { Carousel } from './shared/Carousel';
 import { useState } from 'react';
 import { PADDING, PRIMARY } from './shared/theme';
 
-
 const { width } = Dimensions.get('window');
 
 // Carousel implementation idea
@@ -28,7 +27,7 @@ export const TierCarousel = ({ tierGroups = TIER_GROUPS }) => {
       >
         {
           tierGroups.map((tierGroup, i) => (
-            <View style={styles.carouselItem}>
+            <View key={i} style={styles.carouselItem}>
               <TierGroup key={i}  tiers={tierGroup} />
             </View>
           ))
